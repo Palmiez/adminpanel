@@ -1,0 +1,453 @@
+﻿@model SepaClientApp.Models.DataCatalogViewModel
+@{
+    ViewBag.Title = "SEWEB Data Catalogue";
+}
+@Html.HiddenFor(x => x.WebApiBaseUrl)
+<style type="text/css">
+/* ReSharper disable DeclarationIsEmpty */
+    .content-primary {
+    }
+
+    .checked-list-box {
+    }
+
+    .badge-default { }
+
+    .badge-pill { }
+
+    .theme { }
+
+    .smallLogo {
+        width: 50px;
+        height: 50px;
+    }
+/* ReSharper restore DeclarationIsEmpty */
+</style>
+<main role="main">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="~/DatasetWelcome">Home</a></li>
+            <li><a href="~/DatasetWelcome">Scotland's Environment</a></li>
+            <li class="active">Data Catalogue</li>
+        </ul>
+    </div>
+    <div id="cover">
+        <h3>Please Wait ...</h3>
+    </div>
+    <div class="container-fluid">
+        <!-- Modal -->
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                        <p></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <section class="content-primary">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div id="imaginary_container">
+                                        <div class="input-group stylish-input-group">
+                                            <input id="searchFilter" name="searchFilter" type="text" class="form-control" placeholder="Search">
+                                            <span class="input-group-addon">
+                                                <button type="submit">
+                                                    <span class="glyphicon glyphicon-search"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-9">
+                                    <div id="resultCount"></div>
+                                    <div class="clearfix">
+                                        <select id="orderBy" class="selectpicker pull-right">
+                                            <option>Relevance</option>
+                                            <option>Name Ascending</option>
+                                            <option>Name Descending</option>
+                                            <option>Last Modified</option>          
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </section>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="well" style="max-height: 100%; overflow: auto;">
+
+                    <div class="row">
+                        <div class="hidden-xs col-sm-12" list-group>
+                            <div id="themes-small"></div>
+                            <div id="desktop">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        Published Status
+                                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        Published Datasets (@Model.DataSets.Count())
+                                    </div>
+                                </div>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Organisation
+                                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul id="publishers" class="list-group checked-list-box">
+                                            @{
+                                                if (Model.Organisations != null)
+                                                {
+                                                    foreach (var publisher in Model.Organisations)
+                                                    {
+                                                        <li id='#publishersId' class='list-group-item' data-checked='true' data-name='@publisher.ShortName' data-color='success' onclick="javascript:record.applyThemeFilter('@publisher.Uri');">
+                                                            <div class='row'>
+                                                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                                                <div class="col-xs-3 col-sm-3 hidden-md col-lg-3">
+                                                                    <img class="smallLogo" src="@publisher.Logo"/>
+                                                                </div>
+                                                                <div class='col-xs-5 hidden-sm col-md-5 col-lg-5'>
+                                                                    <b>@publisher.ShortName</b>
+                                                                    <p>
+                                                                        <small>@publisher.Name</small>
+                                                                    </p>
+                                                                </div>
+
+                                                                <div class='col-xs-3 hidden-sm col-md-2'>
+
+                                                                    <span class='badge badge-default badge-pill'>@publisher.DatasetCount</span>
+                                                                </div>
+
+                                                            </div>
+                                                        </li>
+                                                    }
+                                                }
+
+                                            }
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Tasks
+                                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul id="tasks" class="list-group checked-list-box"></ul>
+                                    </div>
+                                </div>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Gemet
+                                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul id="themes" class="list-group checked-list-box"></ul>
+                                    </div>
+                                </div>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Uncategorised
+                                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul id="uncategorised" class="list-group checked-list-box"></ul>
+                                    </div>
+                                </div>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Application
+                                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul id="applications" class="list-group checked-list-box"></ul>
+                                        @foreach (var app in @Model.Applications)
+                                        {
+                                            <li class='list-group-item' data-checked='true' data-name='@app.Name' data-color='success' onclick="javascript:record.applyThemeFilter('@app.Uri');">
+                                                <div class='row'>
+                                                    <div class='col-sm-9'>@app.Name</div>
+                                                    <div class='col-sm-3'>
+                                                        <span class='badge badge-default badge-pill'>@app.Count</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        }                                       
+                                    </div>
+                                </div>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Licenses
+                                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul id="licenses" class="list-group checked-list-box">
+                                            @foreach (var license in @Model.Licenses)
+                                            {
+                                                <li class='list-group-item' data-checked='true' data-name='@license.Name' data-color='success' onclick="javascript:record.applyThemeFilter('@license.Uri');">
+                                                    <div class='row'>
+                                                        <div class='col-sm-9'>@license.Name</div>
+                                                        <div class='col-sm-3'>
+                                                            <span class='badge badge-default badge-pill'>@license.Count</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            }
+                                        </ul>                                        
+                                    </div>
+                                </div>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Format
+                                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul id="formats" class="list-group checked-list-box"></ul>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-9">
+
+
+                <table id="datastoretable" class="display" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th style="display: none">Title</th>
+                            <th style="display: none">Publisher</th>
+                            <th style="display: none">Last Updated</th>
+                            <th style="display: none">Keywords</th>
+                            <th style="display: none">Theme</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+
+                    </tfoot>
+                    <tbody>
+                        @foreach (var dataset in Model.DataSets)
+                        {
+                            if (string.IsNullOrEmpty(dataset.ThemeName))
+                            {
+
+                                dataset.ThemeName = "uncategorised";
+                                dataset.ThemeUri = "uncategorised";
+                                dataset.ThemeCategory = "uncategorised";
+                            }
+
+                            <tr>
+                                <td>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    @{
+                                                        var graphId = dataset.GraphId;
+                                                        if (!string.IsNullOrEmpty(graphId))
+                                                        {
+                                                            graphId = graphId.Substring(graphId.LastIndexOf('/') + 1);
+                                                        }
+                                                    }
+                                                    <strong><a href="@Url.Action("Dataset", "DemoWithTable")/@graphId">@dataset.Title</a></strong>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <span class="pull-right text-success"><strong>@dataset.ThemeName</strong></span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="col-sm-10">
+                                                <div style="word-break: normal;">@dataset.Description</div>
+                                                <small class="text-muted">@dataset.Keyword</small>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <span class="pull-right">
+                                                    @{}
+                                                    <kbd class="pull-right">@dataset.Publisher</kbd>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </td>
+                                <td>@dataset.Publisher</td>
+                                <td>@dataset.UpdatedDate</td>
+                                <td>@dataset.Keyword</td>
+                                <td class="theme">@dataset.ThemeUri</td>
+
+                            </tr>
+
+                                                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+@section scripts {
+    <script>
+        
+        $(document).ready(function () {
+   
+            var table = $('#datastoretable').DataTable({
+                "columnDefs": [
+                    {
+                        "targets": [1, 2, 3, 4],
+                        "visible": false,
+                        "searchable": true
+                    }
+                ],
+                dom: "Brtip", //Bfrtip if include search
+                select: true,
+                buttons: [
+                    {
+                        text: 'Select all',
+                        action: function () {
+                            table.rows().select();
+                        }
+                    },
+                    {
+                        text: 'Select none',
+                        action: function () {
+                            table.rows().deselect();
+                        }
+                    }
+                ]
+            });
+
+            $.fn.dataTable.ext.search.push(
+                function (settings, data, dataIndex) {
+                    var searchFilter = $('#searchFilter').val();
+                    var lookInTitle = data[0];
+                    if ((!searchFilter) || searchFilter.length === 0 || lookInTitle.indexOf(searchFilter) !== -1) {
+                        return true;
+                    } else return false;
+                }
+            );
+
+            $('#themes2').change(function () {
+                table.draw();
+            });
+
+            $('#themes, #tasks, #uncategorised').on('contentChanged', function () {
+                table.draw();
+            });
+
+            $("#searchFilter").keyup(function () {
+                table.draw();
+            });
+        });
+
+        var callback = function () {
+
+            var graphWithNoThemeCount = 0;
+            var graphWithInvalidThemeCount = 0;
+
+            @{
+                <text>
+                    var themestr = '@string.Join(",", Model.DataSets.Select(x => x.ThemeUri).ToArray())';
+                </text>
+            }
+            var themeList = themestr.split(',');
+
+            $.each(themeList, function(i)
+                {
+                    var theme = themeList[i];
+
+
+                    if (theme) {
+                        if (!themesEngine.addThemes(theme)) {
+                            graphWithInvalidThemeCount++;
+                        }
+                    } else {
+                        graphWithNoThemeCount++;
+                    }
+                });
+
+            themesEngine.setCount("INVALID", graphWithInvalidThemeCount);
+            themesEngine.renderTaskThemes();
+            themesEngine.renderGemetThemes();
+
+            themesEngine.renderUncategorisedThemes(graphWithNoThemeCount + graphWithInvalidThemeCount);
+
+        
+
+
+            $("#orderBy").change(function () {
+                var table = $("#datastoretable").DataTable();
+                if ($(this).val() === 'Name Ascending') {
+                    table.order([0, 'asc']);
+                    table.draw();
+                } else if ($(this).val() === 'Name Descending') {
+                    table.order([0, 'desc']);
+                    table.draw();
+                }
+            });
+
+            
+
+
+            applyCheckboxes("tasks");
+            applyCheckboxes("themes");
+            applyCheckboxes("uncategorised");
+            applyCheckboxes("publishers");
+
+            $('#myModal').on('shown.bs.modal',
+                function (e) {
+                    var el = $(this).find(".modal-content .modal-body p")[0];
+                    el.replaceWith("TEST");
+                });
+
+            $("#cover").fadeOut(300);
+        }
+
+        var themesEngine = new ThemesEngine();
+        themesEngine.executeRender = callback;
+        themesEngine.fetchThemes();
+
+        $(document).on('click',
+            '.panel-heading span.clickable',
+            function(e) {
+                var $this = $(this);
+                if (!$this.hasClass('panel-collapsed')) {
+                    $this.parents('.panel').find('.panel-body').slideUp();
+                    $this.addClass('panel-collapsed');
+                    $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+                } else {
+                    $this.parents('.panel').find('.panel-body').slideDown();
+                    $this.removeClass('panel-collapsed');
+                    $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+                }
+            });
+
+    </script>
+}

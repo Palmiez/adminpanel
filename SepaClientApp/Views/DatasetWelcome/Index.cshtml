@@ -1,0 +1,98 @@
+﻿@model SepaClientApp.Models.DataCatalogStatisticsViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<main role="main">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Scotland's Environment</a></li>
+            <li class="active">Welcome</li>
+        </ul>
+        
+        <div class="page-header">
+            <h1>Scotland's Environment Web Data Catalogue <small><a href="~/DemoWithTable">Go straight to Data Catalogue</a></small></h1>
+        </div>
+        <div class="row">
+            <section class="content-primary col-md-6">
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Welcome to the Scotland's Environmental Web Data Catalogue</div>
+                        <div class="panel-body">
+                            <p>
+                                Here you can access a wide range of data about Scotland's Environment published by trusted and authoritative partners.
+                                You can search and discover data that is available, see how you can view it, and download your data of choice.
+                            </p>
+                            <p>
+                                We will continue to expand the amount of data available - <b>sign up</b> to RSS feed for updates.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">How to use this data catalogue</div>
+                        <div class="panel-body">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Contact Us</div>
+                        <div class="panel-body">Can't find the data you need - Contact Us.</div>
+                            
+                    </div>
+                </div>
+            </section>
+            <section class="content-secondary col-md-6">
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Data Catalogue Statistics</div>
+                        <div class="panel-body">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    
+                                    Data Sets: 
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.NumberOfDatasets)
+                                </dd>
+
+                                <dt>
+                                    Organisations:
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.NumberOfOrganisations)
+                                </dd>                                
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Most recent added/modified data
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @foreach (var dataset in Model.MostRecentlyModifiedData)
+                            {
+                                <li>@dataset</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+
+
+
+

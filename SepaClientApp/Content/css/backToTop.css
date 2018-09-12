@@ -1,0 +1,19 @@
+.scrollToTop {
+	background: url("../images/backToTop.png") no-repeat scroll 22px 33px;
+    color: #ccc;
+    display: none;
+    font-weight: bold;
+    height: 130px;
+    padding: 10px;
+    position: fixed;
+    right: 40px;
+    text-align: center;
+    text-decoration: none;
+    top: 100px;
+    width: 90px;
+    z-index: 9999;
+}
+.scrollToTop:hover {
+	color: #6ca623;
+	text-decoration: none;
+}

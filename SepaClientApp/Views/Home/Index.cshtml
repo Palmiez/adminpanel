@@ -1,0 +1,51 @@
+﻿@model SepaClientApp.Models.DataCatalogViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+@Html.HiddenFor(x => x.WebApiBaseUrl)
+<div class="container-fluid">
+    <div class="row">
+        <div class="pull-right">@Html.Partial("../Shared/Partials/FilterDropDown")</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" list-group>
+            <p id="themesTitle"></p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="container-fluid">
+            <div class="col-lg-2 col-md-4 col-sm-4">
+
+                <div class="row">
+                    <div class="col-md-12" list-group>
+                        <div id="themes-small"></div>
+                        <div class="well" style="max-height: 100%; overflow: auto;">
+  
+                            <ul id="themes" class="list-group checked-list-box"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-8 col-sm-8">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div id="result" class="list-group"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/datastore")
+@section scripts {
+
+}
+
+
+
+

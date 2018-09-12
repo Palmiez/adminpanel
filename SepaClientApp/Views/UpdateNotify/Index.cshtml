@@ -1,0 +1,187 @@
+﻿@model SepaClientApp.Models.UpdateNotifyViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<main role="main">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="~/DatasetWelcome">Home</a></li>
+            <li><a href="~/DatasetWelcome">Scotland's Environment</a></li>
+            <li class="active">Update Notification</li>
+        </ul>
+    </div>
+    <div class="container">       
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="row">
+                    <h4>Notify Data Update</h4>
+                    <hr />
+                </div>
+                <div class="row">
+
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CatalogList, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.CatalogList, new SelectList(Model.CatalogList, "Id", "DisplayValue"), new { @class = "selectpicker", @title = "Choose a catalog ..." })
+                            @Html.ValidationMessageFor(model => model.CatalogList, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div id="datasetGroup" class="form-group">
+                        @Html.LabelFor(model => model.DatasetList, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <select id="DatasetList" name="DatasetList" class="selectpicker" title="Choose one of the following...">
+                                @foreach (var dataset in Model.DatasetList)
+                                {
+                                    <option value="@dataset.Id">@dataset.DisplayValue</option>
+                                }
+                            </select>
+
+                            @*@Html.DropDownListFor(model => model.DatasetList, new SelectList(Model.DatasetList, "Id", "DisplayValue"))*@
+                            @Html.ValidationMessageFor(model => model.DatasetList, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div id="distributionGroup" class="form-group">
+                        @Html.Label("Distributions", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <select id="distributions" name="distributions" class="selectpicker" title="Choose one of the following..."></select>
+
+                            @*@Html.DropDownListFor(model => model.DistributionId, new SelectList(Model.DistributionList, "GraphItemId", "Title"))*@
+                            @Html.ValidationMessageFor(model => model.DistributionId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="UpdateInfo">
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ModifiedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ModifiedDate, new { htmlAttributes = new { @class = "form-control", style = "width: 220px" } })
+                                @Html.ValidationMessageFor(model => model.ModifiedDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.LicenseTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <select id="licenses" name="licenses" class="selectpicker" title="Choose one of the following...">
+                                    @foreach (var license in Model.LicenseList)
+                                    {
+                                        <option value="@license.Id">@license.DisplayValue</option>
+                                    }
+                                </select>
+                                @*@Html.EditorFor(model => model.LicenseTitle, new { htmlAttributes = new { @class = "form-control" } })*@
+                                @Html.ValidationMessageFor(model => model.LicenseTitle, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div id="licenseText" class="form-group">
+                            @Html.LabelFor(model => model.LicenseText, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.LicenseText, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.LicenseText, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Update" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</main>
+@Scripts.Render("~/bundles/datastore")
+@section scripts
+{
+    <script>
+
+        $("#datasetGroup").hide();
+        $("#distributionGroup").hide();
+        $("#UpdateInfo").hide();
+        $("#licenseText").hide();
+
+        $("#CatalogList").on("changed.bs.select",
+           (e, clickedIndex, newValue, oldValue) => {
+               try {
+                   if (clickedIndex > 0) {
+                       $("#datasetGroup").show();
+                   } else {
+                       $("#datasetGroup").hide();
+                   }
+
+               } catch (ex) {
+                   alert((ex).message);
+               }
+
+           });
+
+        $("#DatasetList").on("changed.bs.select",
+            (e, clickedIndex, newValue, oldValue) => {
+                try {
+                    var graphId = $("#DatasetList option")[clickedIndex].value;
+                    if (graphId) {
+                        var idx = graphId.lastIndexOf('/') + 1;
+                        graphId = graphId.substring(idx);
+                        var dataHandler = new DistributionEngine();
+                        dataHandler.fetchDistributions(graphId);
+                        $("#distributionGroup").show();
+                    }
+
+                } catch (ex) {
+                    alert((ex).message);
+                }
+
+            });
+
+        $("#licenses").on("changed.bs.select",
+            (e, clickedIndex, newValue, oldValue) => {
+                try {
+                    if (clickedIndex === 3) {
+                        $("#licenseText").show();
+                    } else {
+                        $("#licenseText").hide();
+                    }
+
+                } catch (ex) {
+                    alert((ex).message);
+                }
+
+            });
+
+
+
+        $("#distributions").on("changed.bs.select",
+            (e, clickedIndex, newValue, oldValue) => {
+                try {
+                    if (clickedIndex > 0) {
+                        $("#UpdateInfo").show();
+                    } else {
+                        $("#UpdateInfo").hide();
+                    }
+
+                } catch (ex) {
+                    alert((ex).message);
+                }
+
+            });
+
+    </script>
+}

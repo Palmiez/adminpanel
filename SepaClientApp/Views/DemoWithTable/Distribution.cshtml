@@ -1,0 +1,118 @@
+﻿@model SepaClientApp.Models.DistributionViewModel
+
+@{
+    ViewBag.Title = "Distribution";
+}
+<main role="main">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="~/DatasetWelcome">Home</a></li>
+            <li><a href="~/DatasetWelcome">Scotland's Environment</a></li>
+            <li><a href="~/DemoWithTable">Data Catalogue</a></li>
+            <li class="active">Distribution</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h2>@Model.Title - @Model.DistributionFormat</h2>
+            <p>@Model.Description</p>
+        </div>
+        <div class="row">
+            <section class="content-primary">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Info</div>
+                            <div class="panel-body">
+                                Distribution Format: @Model.DistributionFormat
+
+                                @if (!string.IsNullOrEmpty(Model.Ssdi))
+                                {
+                                    <p><a class="btn btn-info" href="@Model.Ssdi" target="_blank">SSDI</a></p>
+                                        @*<dt>
+                                        @Html.DisplayNameFor(model => model.Ssdi)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Ssdi)
+                                    </dd>*@
+                                }
+                                @if (!string.IsNullOrEmpty(Model.SsdiXml))
+                                {
+                                    <p><a class="btn btn-link"  href="@Model.SsdiXml" target="_blank">SSDI XML</a></p>
+                                        @*<dt>
+                                        @Html.DisplayNameFor(model => model.SsdiXml)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.SsdiXml)
+                                    </dd>*@
+                                }
+
+                                @if (!string.IsNullOrEmpty(Model.AccessUrl))
+                                {
+                                    <p><a class="btn btn-link" href="@Model.AccessUrl" target="_blank">Access Url</a></p>
+                                        @*<dt>
+                                        @Html.DisplayNameFor(model => model.AccessUrl)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.AccessUrl)
+                                    </dd>*@
+                                }
+                                @*@if (!string.IsNullOrEmpty(Model.License))
+                                {
+                                    <p>License: @Html.DisplayFor(model => model.License)</p>
+                                }*@
+                                
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.License)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.License)
+                                    </dd>
+                                    
+
+
+
+
+
+                                    @*<dt>
+                                    @Html.DisplayNameFor(model => model.DownloadUrl)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.DownloadUrl)
+                                </dd>*@
+
+
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                        </div>
+                        <div class="col-sm-6">
+
+                        </div>
+                    </div>
+                </section>
+
+        </div>
+        <p>
+            <a onclick="history.go(-1); return false;" href="#">Back to Dataset</a>
+        </p>
+    </div>
+    <br />
+    <br>
+</main>
+
+

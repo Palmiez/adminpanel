@@ -1,0 +1,82 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+.contentArea nav {
+	margin: 0;
+	padding: 0;
+}
+/* -------------------------------- 
+
+Basic Style
+
+-------------------------------- */
+.cd-breadcrumb {
+	background-color: #edeff0;
+	width: 100%;
+}
+.cd-breadcrumb:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.cd-breadcrumb li {
+	display: inline-block;
+	float: left;
+}
+.cd-breadcrumb li::after {
+	/* this is the separator between items */
+	display: inline-block;
+	content: '\00bb';
+	color: #959fa5;
+}
+.cd-breadcrumb li:last-of-type::after {
+	/* hide separator after the last item */
+	display: none;
+}
+.cd-breadcrumb li > * {
+	/* single step */
+	display: inline-block;
+	color: #2c3f4c;
+}
+.cd-breadcrumb li.current > * {
+	/* selected step */
+	color: #96c03d;
+}
+.no-touch .cd-breadcrumb a:hover {
+	/* steps already visited */
+	color: #96c03d;
+}
+.cd-breadcrumb.custom-separator li::after {
+	/* replace the default arrow separator with a custom icon */
+	content: '';
+	height: 16px;
+	width: 16px;
+	background: url(../images/cd-custom-separator.svg) no-repeat center center;
+	vertical-align: middle;
+}
+	@media only screen and (min-width: 768px) {
+		.cd-breadcrumb {
+		}
+		.cd-breadcrumb li {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		.cd-breadcrumb li::after {
+			margin: 0 1em;
+		}
+		.cd-breadcrumb li > * {
+			font-size: 14px;
+		}
+	}
+		@-moz-document url-prefix() {
+		 .cd-breadcrumb.triangle li::after,  .cd-breadcrumb.triangle li > *::after {
+			  /* fix a bug on Firefix - tooth edge on css triangle */
+			  border-left-style: dashed;
+		}
+	}
+}

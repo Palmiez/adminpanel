@@ -1,0 +1,987 @@
+/* GENERAL STYLING */
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 12pt;
+	-­webkit­font­smoothing: antialiased;
+}
+.h1, h1 {
+	font-size: 33px
+}
+.h2, h2 {
+	font-size: 30px
+}
+.h3, h3 {
+	font-size: 24px
+}
+.h4, h4 {
+	font-size: 18px
+}
+.h5, h5 {
+	font-size: 14px
+}
+.h6, h6 {
+	font-size: 12px
+}
+p {
+	margin: 0 0 10px
+}
+#chartdiv {
+	width: 100%;
+	height: 500px;
+}
+/* HEADER */
+header {
+	background: #055385;
+	background: rgba(5,84,133,1);
+	background: -moz-linear-gradient(top, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(4,66,105,1)), color-stop(100%, rgba(5,84,133,1)));
+	background: -webkit-linear-gradient(top, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+	background: -o-linear-gradient(top, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+	background: -ms-linear-gradient(top, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+	background: linear-gradient(to bottom, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#044269', endColorstr='#055485', GradientType=0 );
+	height: 115px;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+/* CONTENT HOLDER */
+.contentArea {
+	background: #fff none repeat scroll 0 0;
+	height: auto;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+.introBoxContent p a {
+	color: #8cc543;
+	text-decoration: none;
+}
+.introBoxContent p a:hover {
+	text-decoration: underline;
+}
+/* Sticky footer
+-------------------------------------------------- */
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+/* RESPONSIVE STYLING */
+
+/* Tablet portrait (768x1024) / Small tablet landscape (800x600) STYLING */
+/* Kindle Fire HD 7, Google Nexus 7, Galaxy Note  */
+@media (min-width:768px) {
+}
+
+/* Samsung Specific - Galaxy Note 2 */ 
+@media screen and (min-device-width: 720px) and (max-device-height: 1280px) {
+}
+
+/* Tablet landscape (1024x768) STYLING */
+/* iPad 1-4, Kindle Fire 7, Nook, HP Slate 7, HP Touchpad, Galaxy Tab 7.0 */
+@media (min-width:992px) {
+}
+
+/* Large screen desktop STYLING */
+/* Kindle Fire HD 8.9, Asus Transformer Pad, Nook HD, Nook HD+, Microsoft Surface RT, Microsoft Surface Pro, Galaxy Tab 7.7, Galaxy Tab 8.9, Galaxy Tab 10.1, Google Nexus 10, Sony Xperia Tablet S, Sony Xperia Tablet Z */
+@media (min-width:1200px) {
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+}
+/* Menu */
+.flexinav .flexinav_wrapper {
+	padding-left: 31px;
+	padding-right: 31px;
+}
+.logo {
+	background: rgba(0, 0, 0, 0) url("../images/SEWeb-Logo.png") no-repeat scroll 0 0;
+	height: 48px;
+	left: 37px;
+	position: absolute;
+	text-indent: 0;
+	top: 55px;
+	width: 24.5%;
+}
+.logo a {
+	height: 50px;
+	left: 3px;
+	opacity: 0;
+	position: absolute;
+	text-decoration: none;
+	top: 0;
+	width: 300px;
+	filter: alpha(opacity=0); /* For IE8 and earlier */
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+}
+.row {
+	border-bottom: 2px solid #fff;
+}
+.leftColumn {
+	float: left;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 70%;
+}
+.introBox {
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+.introBoxImage {
+	height: auto;
+	position: relative;
+	width: 100%;
+}
+.introBox .introBoxOverlay {
+	background: rgb(4, 66, 105); /* Fallback */
+	background: rgba(4, 66, 105, 0.65);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.introBox .introBoxOverlay .introBoxContent {
+	color: #fff;
+	height: auto;
+	left: 41px;
+	min-height: 1px;
+	position: absolute;
+	top: 40px;
+	width: 90%;
+}
+.introBoxContent h2 {
+	font-weight: 600;
+	margin-bottom: 40px;
+}
+.introBoxContent p {
+	font-size: 20px;
+}
+.callToActions {
+	background: #fff none repeat scroll 0 0;
+	height: 100%;
+	left: 0;
+	min-height: 360px;
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+.actionHolder {
+	left: 35px;
+	position: absolute;
+	top: 15px;
+}
+.actionColumn {
+	float: left;
+	width: 49%;
+}
+.actionWrap {
+	margin-bottom: 15px;
+	margin-right: 10px;
+	overflow: hidden;
+}
+.actionWrap i {
+	background: #ffffff none repeat scroll 0 0;
+	border: 3px solid #ffffff;
+	border-radius: 100%;
+	box-shadow: 0 0 0 5px #f2f2f2 inset;
+	color: #8cc543;
+	float: left;
+	font-size: 40px;
+	height: 85px;
+	line-height: 80px;
+	margin: 3px 25px 3px 3px;
+	text-align: center;
+	transition: all 500ms ease 0s;
+	width: 85px;
+}
+.actionWrap i:hover {
+	background: #075483;
+	color: #fff;
+	box-shadow: inset 0 0 0 5px #075483;
+	-webkit-box-shadow: inset 0 0 0 5px #075483;
+	border: 3px solid #075483;
+}
+.actionWrap h2 {
+	margin-top: 10px;
+}
+.videoBox {
+	float: left;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 50%;
+}
+.videoBoxImage {
+	height: auto;
+	position: relative;
+	width: 100%;
+}
+.videoBox .videoBoxOverlay {
+	background: rgb(60, 60, 60); /* Fallback */
+	background: rgba(60, 60, 60, 0.6);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.videoBox .videoBoxOverlay .videoBoxContent {
+	color: #fff;
+	font-weight: 600;
+	height: auto;
+	left: 41px;
+	position: absolute;
+	top: 20px;
+	width: 80%;
+}
+.videoBoxContent p {
+	font-size: 16px;
+}
+.videoBoxContent p a {
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+}
+.videoBoxContent p a:hover {
+	color: #8cc543;
+	text-decoration: underline;
+}
+.newsletterBox {
+	float: right;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 50%;
+}
+.newsletterBox .newsletterBoxOverlay {
+	background: rgb(232, 232, 232); /* Fallback */
+	background: rgba(232, 232, 232, 1);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.newsletterBox .newsletterBoxOverlay .newsletterBoxContent {
+	color: #3c3c3c;
+	font-weight: 600;
+	height: 100%;
+	left: 35px;
+	position: absolute;
+	top: 12px;
+	width: 84%;
+}
+.newsletterBoxContent p {
+	font-size: 20px;
+	text-align: center;
+}
+.newsletterBoxContent .button {
+	background: #075483 none repeat scroll 0 0;
+	border: 3px solid #075483;
+	border-radius: 5px;
+	box-shadow: 0 0 0 5px #075483 inset;
+	float: left;
+	font-size: 16px;
+	margin-top: 4px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	width: 60%;
+	-webkit-box-shadow: inset 0 0 0 5px #075483;
+}
+.newsletterBox .newsletterBoxOverlay .newsletterBoxContent .button a {
+	color: #fff;
+}
+.newsletterBox .newsletterBoxOverlay .newsletterBoxContent .newsletterImage {
+	float: right;
+	margin-top: -23px;
+	width: 30%;
+}
+.newsletterBox .newsletterBoxOverlay .newsletterBoxContent .newsletterImage img {
+	height: auto;
+	width: 75%;
+}
+.instagramBox {
+	float: left;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 33.33333%;
+}
+.instagramBoxImage {
+	height: auto;
+	position: relative;
+	width: 100%;
+}
+.instagramBox .instagramBoxOverlay {
+	background: rgb(11, 122, 191); /* Fallback */
+	background: rgba(11, 122, 191, 0.85);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.instagramBox .instagramBoxOverlay .instagramBoxContent {
+	color: #fff;
+	font-weight: 600;
+	height: 100%;
+	left: 43px;
+	position: absolute;
+	top: 0;
+	width: 87%;
+}
+.instagramBox .instagramBoxOverlay .instagramBoxContent p a {
+	color: #fff;
+	text-decoration: none;
+}
+.instagramBox .instagramBoxOverlay .instagramBoxContent p a:hover {
+	color: #8cc543;
+}
+.instagramList #instafeed a.animated.flipInX {
+	float: left;
+}
+.instagramList #instafeed a img {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.instagramList #instafeed a.animated.flipInX .likes {
+	color: #fff;
+	margin-top: -10px;
+	margin-bottom: 5px;
+	width: 30%;
+}
+.twitterBox {
+	float: left;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 33.33333%;
+}
+.twitterBoxImage {
+	height: auto;
+	position: relative;
+	width: 100%;
+}
+.twitterBox .twitterBoxOverlay {
+	background: rgb(4, 66, 105); /* Fallback */
+	background: rgba(4, 66, 105, 0.85);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.twitterBox .twitterBoxOverlay .twitterBoxContent {
+	color: #fff;
+	font-weight: 600;
+	height: 100%;
+	left: 41px;
+	position: absolute;
+	top: 0;
+	width: 85%;
+}
+.twitterBox .twitterBoxOverlay .twitterBoxContent p a {
+	color: #fff;
+	text-decoration: none;
+}
+.twitterBox .twitterBoxOverlay .twitterBoxContent p a:hover {
+	color: #8cc543;
+}
+.facebookBox {
+	float: right;
+	height: 100%;
+	right: 0;
+	position: relative;
+	top: 0;
+	width: 33.33333%;
+}
+.facebookBoxImage {
+	height: auto;
+	position: relative;
+	width: 100%;
+}
+.facebookBox .facebookBoxOverlay {
+	background: rgb(60, 60, 60); /* Fallback */
+	background: rgba(60, 60, 60, 0.85);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.facebookBox .facebookBoxOverlay .facebookBoxContent {
+	color: #fff;
+	font-weight: 600;
+	height: 100%;
+	left: 55px;
+	position: absolute;
+	top: 0;
+	width: 80%;
+}
+.facebookBox .facebookBoxOverlay .facebookBoxContent p a {
+	color: #fff;
+	text-decoration: none;
+}
+.facebookBox .facebookBoxOverlay .facebookBoxContent p a:hover {
+	color: #8cc543;
+}
+.partnersBox {
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	float: left;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+.partnersBoxImage {
+	height: auto;
+	position: relative;
+	width: 100%;
+}
+.partnersBox .partnersBoxOverlay {
+	background: rgb(60, 60, 60); /* Fallback */
+	background: rgba(60, 60, 60, 0.2);
+	border-bottom: 3px solid #fff;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.partnersBox .partnersBoxOverlay .partnersBoxContent {
+	color: #fff;
+	font-weight: 600;
+	height: auto;
+	left: 41px;
+	position: absolute;
+	top: 10px;
+	text-align: center;
+	width: 95.4%;
+}
+.partnersBoxContent h2 {
+	font-size: 40px;
+}
+.partnersBoxContent p {
+	padding-bottom: 40px;
+}
+.partnersBoxContent p a {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	margin-right: 20px;
+	text-decoration: none;
+}
+.partnersBoxContent p a:hover {
+	color: #8cc543;
+	text-decoration: underline;
+}
+.partnerLogos {
+	float: left;
+	text-align: center;
+	width: 100%;
+}
+.logoImages {
+	float: left;
+	width: 20%;
+}
+.partnerLogos .logoImages img {
+	height: auto;
+	padding-bottom: 20px;
+	padding-right: 20px;
+	width: 100%;
+}
+.footer {
+	background-color: #2e2e2e;
+	bottom: 0;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	position: absolute;
+	width: 100%;
+}
+footer.footer .footerContainer {
+	float: left;
+	height: auto;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+footer.footer .footerContent {
+	color: #fff;
+	font-weight: 600;
+	height: auto;
+	left: 42px;
+	position: absolute;
+	top: 20px;
+	width: 94%;
+}
+.footerLeft {
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 20%;
+}
+.footerRight {
+	float: right;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	width: 80%;
+}
+.footerLeft ul.socialMediaLinks, .footerRight ul.footerLinks {
+	padding: 0;
+	margin: 0;
+}
+.footerLeft ul.socialMediaLinks li {
+	display: inline-block;
+	margin-right: 20px;
+	margin-top: -6px;
+}
+.footerRight ul.footerLinks li {
+	display: inline-block;
+	font-size: 15px;
+	margin-left: 20px;
+	text-align: right;
+}
+.footerLeft ul.socialMediaLinks li a, .footerRight ul.footerLinks li a {
+	color: #fff;
+	text-decoration: none;
+}
+.footerLeft ul.socialMediaLinks li a:hover, .footerRight ul.footerLinks li a:hover {
+	color: #0b7abf;
+	text-decoration: none;
+}
+.spacer {
+	height: 20px;
+	width: 100%;
+}
+.pageHeader {
+	background: #e6e6e6;
+	border-bottom: 2px solid #fff;
+	width: 100%;
+}
+.pageHeader h1 {
+	color: #044269;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 5px 10px 5px 37px;
+	position: relative;
+}
+.boxHolder {
+	float: left;
+	margin: 10px;
+	width: 31.6%;
+}
+.summaryBoxHolder {
+	float: left;
+	margin: 10px;
+	width: 98%;
+}
+.fullBoxHolder {
+	float: left;
+	margin: 10px;
+	width: 98%;
+}
+.pageBox {
+	border: 1px solid #e8e8e8;
+	box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	padding: 0;
+	width: 100%;
+	-moz-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-ms-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-o-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-webkit-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+}
+.pageBoxChapter {
+	border: 1px solid #e8e8e8;
+	box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	padding: 0;
+	width: 100%;
+	-moz-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-ms-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-o-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-webkit-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+}
+.summaryPageBox {
+	padding: 0;
+	width: 100%;
+}
+.fullPageBox {
+	border: 1px solid #e8e8e8;
+	box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	padding: 0;
+	width: 100%;
+	-moz-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-ms-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-o-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-webkit-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+}
+.boxImage {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.boxImage img {
+	height: auto;
+	max-width: 100%;
+}
+.boxText {
+	background: #f8f8f8 none repeat scroll 0 0;
+	height: 100%;
+	margin: 0;
+	min-height: 180px;
+	padding: 10px 0 0;
+	width: 100%;
+}
+.summaryBoxText, .fullBoxText {
+	height: 100%;
+	margin: 0;
+	min-height: 1px;
+	padding: 10px 0 0;
+	width: 100%;
+}
+.boxText p {
+	padding: 0 20px 0 30px;
+}
+.boxText p span {
+	font-weight: 600;
+	font-style: italic;
+}
+.pageBox h2, .pageBox p, .summaryPageBox h2, .summaryPageBox p, .pageBoxChapter h2 {
+	min-height: 70px;
+	padding: 0 20px 0 30px;
+}
+.fullPageBox h2, .fullPageBox p {
+	min-height: 30px;
+	padding: 0 20px 0 30px;
+}
+.pageBox .button, .pageBoxChapter .button, .fullPageBox .button {
+	background: #0b7abf none repeat scroll 0 0;
+	margin: 0;
+	padding: 10px 5px 10px 0;
+	text-transform: uppercase;
+	width: 100%;
+}
+.pageBox .button a, .pageBoxChapter .button a, .fullPageBox .button a {
+	color: #fff;
+	font-weight: 600;
+	padding-left: 30px;
+	text-decoration: none;
+}
+.pageBox .button a:hover, .pageBoxChapter .button a:hover, .fullPageBox .button a:hover {
+	color: #8cc544;
+	text-decoration: none;
+}
+.content {
+	height: 100%;
+	left: 38px;
+	min-height: 1px;
+	position: relative;
+	top: 0;
+	width: 90%;
+}
+.anchorLinks {
+	background: #f3f3f3 none repeat scroll 0 0;
+	border: 1px solid #e8e8e8;
+	box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	float: left;
+	height: 100%;
+	margin-bottom: 30px;
+	margin-top: 15px;
+	min-height: 1px;
+	padding: 10px;
+	width: 100%;
+}
+.anchorLinks h3 {
+	margin: 0;
+	padding: 0 20px 20px;
+}
+.anchorLinks ul {
+	margin: 0;
+	padding: 0 20px 20px;
+}
+.anchorLinks ul li {
+	display: inline-block;
+	zoom: 1;
+}
+.anchorLinks ul li a {
+	background: #e8e8e8 none repeat scroll 0 0;
+	border: 1px solid #d8d8d8;
+	border-radius: 5px;
+	color: #055385;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding: 10px;
+}
+.anchorLinks ul li a:hover {
+	background: #8cc543 none repeat scroll 0 0;
+	border: 1px solid #8cc543;
+	border-radius: 5px;
+	color: #055385;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding: 10px;
+	text-decoration: none;
+}
+.rightColumn {
+	float: right;
+	right: 0;
+	top: -1px;
+	width: 30%;
+}
+.daughterSites {
+	float: right;
+	height: auto;
+	top: 1px;
+	width: 100%;
+}
+.environmentTopics {
+	background: #e8e8e8 none repeat scroll 0 0;
+	float: right;
+	height: auto;
+	min-height: 1px;
+	top: 1px;
+	width: 100%;
+}
+.usefulContacts {
+	background: #044269 none repeat scroll 0 0;
+	float: right;
+	height: 100%;
+	top: 1px;
+	width: 100%;
+}
+.relatedLinks {
+	background: #055385 none repeat scroll 0 0;
+	float: right;
+	height: 100%;
+	top: 1px;
+	width: 100%;
+}
+.contentList {
+	color: #044269;
+	font-weight: 600;
+	height: auto;
+	margin-bottom: 15px;
+	margin-left: 37px;
+	margin-top: 10px;
+	right: 0;
+	top: 0;
+	width: 81%;
+}
+.contentList h2 {
+	border-bottom: 1px dashed #c3c2c2;
+	color: #ffffff;
+	font-size: 25px;
+	margin-bottom: 14px;
+	padding-bottom: 5px;
+}
+.daughterSites .contentList h2, .environmentTopics .contentList h2, .blogSearch .contentList h2 {
+	color: #030303;
+}
+.pageList {
+	background: #fff none repeat scroll 0 0;
+	border-radius: 5px;
+	height: auto;
+	min-height: 100px;
+	padding: 5px 15px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+}
+.daughterSites .contentList .pageList p {
+	border-bottom: 1px solid #f3f2f2;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+}
+.daughterSites .contentList .pageList p a {
+	font-size: 24px;
+}
+.daughterSites .contentList .pageList p span {
+	font-size: 14px;
+	font-style: italic;
+}
+.pageList p img {
+	padding-top: 10px;
+}
+.pageList p a {
+	font-size: 18px;
+}
+.pageList p span {
+	color: #3c3c3c;
+	font-weight: 400;
+}
+.pageList ul li {
+	border-bottom: 1px solid #f3f2f2;
+	line-height: 36px;
+	list-style: outside none none;
+	margin-left: -40px;
+	padding: 0;
+}
+.suggestedPages {
+	background: #0b7abf none repeat scroll 0 0;
+	float: right;
+	height: 100%;
+	top: 1px;
+	width: 100%;
+}
+.websiteUpdates {
+	background: #8cc543 none repeat scroll 0 0;
+	float: right;
+	height: auto;
+	min-height: 387px;
+	top: 1px;
+	width: 100%;
+}
+.previouslyVisited {
+	background: #8cc543 none repeat scroll 0 0;
+	float: right;
+	height: auto;
+	min-height: 315px;
+	top: 1px;
+	width: 100%;
+}
+.blogSearch {
+	background: #f8f8f8 none repeat scroll 0 0;
+	float: right;
+	height: auto;
+	min-height: 1px;
+	top: 1px;
+	width: 100%;
+}
+p.lead {
+	font-size: 14px;
+	font-weight: normal;
+	margin-top: 10px;
+}
+.button {
+	display: inline-block;
+	padding: 0.5em 1.0em;
+	margin-bottom: 10px;
+	background: #EEE;
+	border: none;
+	border-radius: 7px;
+	background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+	color: #222;
+	font-family: sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: #0b7abf;
+	color: #fff;
+}
+.button:active, .button.is-checked {
+	background-color: #28F;
+}
+.button.is-checked {
+	color: white;
+}
+.button:active {
+	box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+}
+/* ---- button-group ---- */
+
+.button-group:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.button-group .button {
+	float: left;
+	border-radius: 0;
+	margin-left: 0;
+	margin-right: 1px;
+}
+.button-group .button:first-child {
+	border-radius: 0.5em 0 0 0.5em;
+}
+.button-group .button:last-child {
+	border-radius: 0 0.5em 0.5em 0;
+}
+.grid {
+	width: 100%;
+}
+/* clear fix */
+.grid:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.element-item {
+	border: 1px solid #e8e8e8;
+    box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 10px 15px;
+    width: 48.5%;
+	-moz-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-ms-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-o-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+	-webkit-box-shadow: -5px 5px 5px -5px #ccc, 5px 5px 5px -5px #ccc;
+}
+.element-item > * {
+	margin: 0;
+	padding: 0;
+}
+.element-item h2.name {
+	margin-bottom: 10px;
+}
+.element-item p {
+	margin: 0 0 10px;
+}
+.element-item .android {
+	background: url(../images/mobile-apps/GooglePlay.png) no-repeat;
+	float: left;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 50%;
+}
+.element-item .iOS {
+	background: url(../images/mobile-apps/AppStore.png) no-repeat;
+	float: right;
+    height: 50px;
+	margin-bottom: 10px;
+    margin-top: 10px;
+    width: 50%;
+}
+.element-item .windows {
+}
+.element-item .mobilesite {
+}
+.element-item .android a, .element-item .iOS a, .element-item .windows a, .element-item .mobilesite a {
+	height: 50px;
+    opacity: 0;
+    position: absolute;
+    text-decoration: none;
+}
+}
+
+/* Mobile landscape (480x320) STYLING */
+/*Blackberry Bold 9930, Blackberry Q10, Blackberry Touch 9810, Blackberry Touch 9850, Samsung S3/4, HTC Sensation, HTC One, LG Optimus 4X HD, LG Optimus G Pro, LG Nexus 4*/
+@media only screen and (max-width: 520px) {
+}
+
+/* Mobile portrait (320x480) STYLING */
+/* iphone 4 & 5, Samsung S & S2, HTC Desire, HTC Desire X, HTC Desire SV, LG Optimus L5, LG Optimus 3D */
+@media only screen and (max-width: 370px) {
+}
+
+/* Samsung S3 */
+@media only screen and (max-width: 400px) and (orientation : portrait) {
+}

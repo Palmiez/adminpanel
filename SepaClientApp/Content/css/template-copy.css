@@ -1,0 +1,481 @@
+/* GENERAL STYLING */
+/* HEADER */
+header {
+	background: #055385;
+	background: rgba(5,84,133,1);
+	background: -moz-linear-gradient(top, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(4,66,105,1)), color-stop(100%, rgba(5,84,133,1)));
+	background: -webkit-linear-gradient(top, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+	background: -o-linear-gradient(top, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+	background: -ms-linear-gradient(top, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+	background: linear-gradient(to bottom, rgba(4,66,105,1) 0%, rgba(5,84,133,1) 100%);
+ 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#044269', endColorstr='#055485', GradientType=0 );
+	height: 115px;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+/* CONTENT HOLDER */
+.contentArea {
+	background: #fff none repeat scroll 0 0;
+	height: 100%;
+	position: relative;
+	top: 1px;
+	width: 100%;
+}
+.introBox .introBoxOverlay .introBoxContent p a {
+	color: #8cc543;
+	text-decoration: none;
+}
+.introBox .introBoxOverlay .introBoxContent p a:hover {
+	text-decoration: underline;
+}
+/* RESPONSIVE STYLING */
+
+/* Tablet portrait (768x1024) / Small tablet landscape (800x600) STYLING */
+@media (min-width:768px) {
+}
+
+/* Tablet landscape (1024x768) STYLING */
+@media (min-width:992px) {
+}
+
+/* Large screen desktop STYLING */
+@media (min-width:1200px) {
+.logo {
+	background: rgba(0, 0, 0, 0) url("../images/SEWeb-Logo.png") no-repeat scroll 0 0;
+	height: 48px;
+	left: 86px;
+	position: absolute;
+	text-indent: 0;
+	top: 55px;
+	width: 22.5%;
+}
+.logo a {
+	height: 50px;
+	left: 3px;
+	opacity: 0;
+	position: absolute;
+	text-decoration: none;
+	top: 0;
+	width: 300px;
+}
+.leftColumn {
+	float: left;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 70%;
+}
+.introBox {
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+.introBox img.introBoxImage {
+	position: relative;
+	width: 100%; /* for IE 6 */
+}
+.introBox .introBoxOverlay {
+	background: #044269 none repeat scroll 0 0;
+	height: 100%;
+	left: 0;
+	opacity: 0.85;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.introBox .introBoxOverlay .introBoxContent {
+	color: #fff;
+	font-weight: 600;
+	height: 100%;
+	left: 85px;
+	position: absolute;
+	top: 20px;
+	width: 80%;
+}
+.callToActions {
+	height: 100%;
+	left: 0;
+	min-height: 380px;
+	position: relative;
+	top: 1px;
+	width: 100%;
+}
+.actionHolder {
+	left: 80px;
+	position: absolute;
+	top: 25px;
+}
+.actionColumn {
+	float: left;
+	width: 49%;
+}
+.actionWrap {
+	margin-bottom: 15px;
+	margin-right: 10px;
+	overflow: hidden;
+}
+.actionWrap i {
+	background: #ffffff none repeat scroll 0 0;
+	border: 3px solid #ffffff;
+	border-radius: 100%;
+	box-shadow: 0 0 0 5px #f2f2f2 inset;
+	color: #8cc543;
+	float: left;
+	font-size: 40px;
+	height: 85px;
+	line-height: 80px;
+	margin: 3px 25px 3px 3px;
+	text-align: center;
+	transition: all 500ms ease 0s;
+	width: 85px;
+}
+.actionWrap i:hover {
+	background: #075483;
+	color: #fff;
+	box-shadow: inset 0 0 0 5px #075483;
+	-webkit-box-shadow: inset 0 0 0 5px #075483;
+	border: 3px solid #075483;
+}
+.actionWrap h2 {
+	margin-top: 10px;
+}
+.videoBox {
+	float: left;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 50%;
+}
+.videoBox img.videoBoxImage {
+	position: relative;
+	width: 100%; /* for IE 6 */
+}
+.videoBox .videoBoxOverlay {
+	background: #3c3c3c none repeat scroll 0 0;
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.videoBox .videoBoxOverlay .videoBoxContent {
+	color: #fff;
+	font-weight: 600;
+	height: 90%;
+	left: 85px;
+	position: absolute;
+	top: 20px;
+	width: 70%;
+}
+.videoBox .videoBoxOverlay .videoBoxContent p a {
+	color: #8cc543;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: none;
+}
+.videoBox .videoBoxOverlay .videoBoxContent p a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.newsletterBox {
+	float: right;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 50%;
+}
+.newsletterBox .newsletterBoxOverlay {
+	background: #e8e8e8 none repeat scroll 0 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.newsletterBox .newsletterBoxOverlay .newsletterBoxContent {
+	color: #3c3c3c;
+	font-weight: 600;
+	height: 100%;
+	left: 35px;
+	position: absolute;
+	top: 38px;
+	width: 84%;
+}
+.newsletterBox .newsletterBoxOverlay .newsletterBoxContent p {
+	font-size: 20px;
+	text-align: center;
+}
+.newsletterBox .newsletterBoxOverlay .newsletterBoxContent .button {
+	background: #075483 none repeat scroll 0 0;
+	border: 3px solid #075483;
+	border-radius: 5px;
+	box-shadow: 0 0 0 5px #075483 inset;
+	font-size: 16px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	width: 60%;
+	-webkit-box-shadow: inset 0 0 0 5px #075483;
+}
+.newsletterBox .newsletterBoxOverlay .newsletterBoxContent .button a {
+	color: #fff;
+}
+.instagramBox {
+	float: left;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 33.33333%;
+}
+.instagramBox img.instagramBoxImage {
+	position: relative;
+	width: 100%; /* for IE 6 */
+}
+.instagramBox .instagramBoxOverlay {
+	background: #fff none repeat scroll 0 0;
+	height: 100%;
+	left: 0;
+	opacity: 0.55;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.instagramBox .instagramBoxOverlay .instagramBoxContent {
+	color: #030303;
+	font-weight: 600;
+	height: 100%;
+	left: 85px;
+	position: absolute;
+	top: 0;
+	width: 80%;
+}
+.instagramBox .instagramBoxOverlay .instagramBoxContent p a {
+	color: #044269;
+	text-decoration: none;
+}
+.instagramBox .instagramBoxOverlay .instagramBoxContent p a:hover {
+	color: #8cc543;
+}
+.twitterBox {
+	float: left;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 33.33333%;
+}
+.twitterBox img.twitterBoxImage {
+	position: relative;
+	width: 100%; /* for IE 6 */
+}
+.twitterBox .twitterBoxOverlay {
+	background: #044269 none repeat scroll 0 0;
+	height: 100%;
+	left: 0;
+	opacity: 0.85;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.twitterBox .twitterBoxOverlay .twitterBoxContent {
+	color: #fff;
+	font-weight: 600;
+	height: 100%;
+	left: 85px;
+	position: absolute;
+	top: 0;
+	width: 80%;
+}
+.twitterBox .twitterBoxOverlay .twitterBoxContent p a {
+	color: #fff;
+	text-decoration: none;
+}
+.twitterBox .twitterBoxOverlay .twitterBoxContent p a:hover {
+	color: #8cc543;
+}
+.facebookBox {
+	float: right;
+	height: 100%;
+	right: 0;
+	position: relative;
+	top: 0;
+	width: 33.33333%;
+}
+.facebookBox img.facebookBoxImage {
+	position: relative;
+	width: 100%; /* for IE 6 */
+}
+.facebookBox .facebookBoxOverlay {
+	background: #044269 none repeat scroll 0 0;
+	height: 100%;
+	left: 0;
+	opacity: 0.85;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.facebookBox .facebookBoxOverlay .facebookBoxContent {
+	color: #fff;
+	font-weight: 600;
+	height: 100%;
+	left: 85px;
+	position: absolute;
+	top: 0;
+	width: 80%;
+}
+.facebookBox .facebookBoxOverlay .facebookBoxContent p a {
+	color: #fff;
+	text-decoration: none;
+}
+.facebookBox .facebookBoxOverlay .facebookBoxContent p a:hover {
+	color: #8cc543;
+}
+.content {
+	height: 100%;
+	left: 85px;
+	min-height: 380px;
+	position: relative;
+	top: 1px;
+	width: 85%;
+}
+.anchorLinks {
+	float: left;
+    height: 100%;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    min-height: 50px;
+    width: 100%;
+}
+.anchorLinks ul li {
+	display:inline-block;
+	zoom: 1;
+}
+.anchorLinks ul li a {
+	background: #e8e8e8 none repeat scroll 0 0;
+    border-radius: 5px;
+    color: #055385;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+.rightColumn {
+	float: right;
+	right: 0;
+	top: -1px;
+	width: 30%;
+}
+.daughterSites {
+	background: #e8e8e8 none repeat scroll 0 0;
+    border-left: 1px solid #fff;
+    float: right;
+    height: 100%;
+    top: 1px;
+    width: 100%;
+}
+.environmentTopics {
+	background: #e8e8e8 none repeat scroll 0 0;
+    border-left: 1px solid #fff;
+    float: right;
+    height: 100%;
+    top: 1px;
+    width: 100%;
+}
+.usefulContacts {
+	background: #044269 none repeat scroll 0 0;
+    border-left: 1px solid #fff;
+    float: right;
+    height: 100%;
+    top: 1px;
+    width: 100%;
+}
+.relatedLinks {
+	background: #055385 none repeat scroll 0 0;
+    border-left: 1px solid #fff;
+    float: right;
+    height: 100%;
+    top: 1px;
+    width: 100%;
+}
+.contentList {
+	color: #044269;
+    font-weight: 600;
+    height: 100%;
+    margin-bottom: 25px;
+    margin-left: 26px;
+    right: 0;
+    top: 20px;
+    width: 87%;
+}
+.contentList h2 {
+	border-bottom: 1px dashed #c3c2c2;
+	margin-bottom: 14px;
+	padding-bottom: 5px;
+}
+.pageList {
+	background: #fff;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+.daughterSites .contentList .pageList, .suggestedPages .contentList .pageList, .previouslyVisited .contentList .pageList, .environmentTopics .contentList .pageList, .relatedLinks .contentList .pageList, .usefulContacts .contentList .pageList {
+	height: auto;
+	min-height: 100px;
+	padding: 5px 15px;
+}
+.contentList .pageList p a {
+	font-size: 16px;
+}
+.contentList .pageList p span {
+	color: #3c3c3c;
+	font-size: 13px;
+	font-weight: 400;
+}
+.contentList .pageList ul li {
+	border-bottom: 1px solid #f3f2f2;
+    font-size: 18px;
+    line-height: 30px;
+    list-style: outside none none;
+    margin-left: -40px;
+    padding: 0;
+}
+.suggestedPages {
+	background: #0b7abf none repeat scroll 0 0;
+    border-left: 1px solid #fff;
+    float: right;
+    height: 100%;
+    top: 1px;
+    width: 100%;
+}
+.previouslyVisited {
+	background: #8cc543 none repeat scroll 0 0;
+    border-left: 1px solid #fff;
+    float: right;
+    height: 100%;
+    top: 1px;
+    width: 100%;
+}
+.relatedLinks .contentList h2, .suggestedPages .contentList h2, .previouslyVisited .contentList h2, .usefulContacts .contentList h2 {
+	color: #ffffff;
+}
+}
+
+/* Small tablet portrait (600x800) STYLING */
+@media only screen and (max-width: 650px) {
+}
+
+/* Mobile landscape (480x320) STYLING */
+@media only screen and (max-width: 520px) {
+}
+
+/* Mobile portrait (320x480) STYLING */
+@media only screen and (max-width: 370px) {
+}

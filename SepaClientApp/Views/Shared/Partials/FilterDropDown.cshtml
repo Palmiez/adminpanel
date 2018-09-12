@@ -1,0 +1,58 @@
+﻿            <div class="input-group" id="adv-search">
+                <input id="titleFilter" type="text" class="form-control" placeholder="Search for datasets" />
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <form class="form-horizontal" role="form">
+                                    <div id="sortFilter" class="form-group  has-success has-feedback">                                        
+                                        <label for="sortFilter">Order</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Sort by </span>
+                                            <select class="form-control">
+                                                <option value="0" selected>Title</option>
+                                                <option value="1">Publisher</option>
+                                                <option value="2">Title</option>
+                                                <option value="3">Published Date</option>
+                                                <option value="4">Updated Date</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group  has-success has-feedback">
+                                        <label for="publisherFilter">Publisher</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Filter on</span>
+                                            <select id="publisherFilter" class="form-control" multiple>
+                                                @*<option value="All" selected>All</option>*@
+                                                <option value="http://data.sepa.org.uk/id/org/sepa">SEPA</option>
+                                                <option value="http://data.sepa.org.uk/id/org/aea">AEA</option>
+                                                <option value="http://data.sepa.org.uk/id/org/bgs">BGS</option>
+                                                <option value="http://data.sepa.org.uk/id/org/ceh">CEH</option>
+                                                <option value="http://data.sepa.org.uk/id/org/ca">CA</option>
+                                                <option value="http://data.sepa.org.uk/id/org/fcs">FCS</option>
+                                                <option value="http://data.sepa.org.uk/id/org/hes">HES</option>
+                                                <option value="http://data.sepa.org.uk/id/org/hs">HS</option>
+                                                <option value="http://data.sepa.org.uk/id/org/jhi">JHI</option>
+                                                <option value="http://data.sepa.org.uk/id/org/ms">MS</option>
+                                                <option value="http://data.sepa.org.uk/id/org/nbn">NBN</option>
+                                                <option value="http://data.sepa.org.uk/id/org/sg">SG</option>
+                                                <option value="http://data.sepa.org.uk/id/org/sng">SNG</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-success has-feedback">
+                                        <label for="keywordFilter">Keywords</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Contains</span>
+                                            <input id="keywordFilter" class="form-control" type="text"/>
+                                        </div>
+                                    </div>
+                                    <button id="searchBtn" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </form>
+                            </div>
+                        </div>
+                        <button id="filterBtn" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>

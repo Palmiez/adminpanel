@@ -1,0 +1,107 @@
+﻿@model SepaClientApp.Models.DataSetViewModel
+
+@{
+    ViewBag.Title = "Dataset";
+}
+
+<main role="main">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="~/DatasetWelcome">Home</a></li>
+            <li><a href="~/DatasetWelcome">Scotland's Environment</a></li>
+            <li><a href="~/DemoWithTable">Data Catalogue</a></li>
+            <li class="active">Dataset</li>
+        </ul>
+        <div class="container">
+            
+            <div class="row">
+                <div class="panel panel-info">
+                    <div class="panel-heading">@Html.DisplayFor(model => model.Title)</div>
+                    <div class="panel-body">
+                        @Html.DisplayFor(model => model.Description)
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Info</div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>@Html.DisplayNameFor(model => model.Publisher)</dt>
+                            <dd>@Html.DisplayFor(model => model.Publisher.Name)</dd>                            
+                            <dt>Themes</dt>
+                            <dd>
+                                @if (Model.Themes != null)
+                                {
+                                    foreach (var item in Model.Themes)
+                                     {
+                                         <span><a href="@item.Uri" target="_blank">@item.Label</a></span>
+                                         <br/>
+                                     }
+                                }
+                            </dd>
+                            <dt>Keywords</dt>
+                            <dd>
+                                @if (Model.Keywords != null)
+                                {
+                                    foreach (var item in Model.Keywords)
+                                    {
+                                        <span>@item</span>
+                                        <br />
+                                    }
+                                }                                
+                            </dd>
+                            
+                            <dt>Issued</dt>
+                            <dd>
+                                @if (@Model.Issued != default(DateTime))
+                                {
+                                    <span>@Model.Issued</span>
+                                }
+                                else
+                                {
+                                    <span>No Value</span>
+                                }
+                            </dd>
+                            <dt>Updated</dt>
+                            <dd>
+                                @if (@Model.Modified != default(DateTime))
+                                {
+                                    <span>@Model.Modified</span>
+                                }
+                                else
+                                {
+                                    <span>No Value</span>
+                                }
+                            </dd>
+                            
+                        </dl>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Data Resources
+                    </div>
+                    <div class="panel-body">
+                        @if (Model.Distributions != null)
+                        {
+                            foreach (var dist in Model.Distributions)
+                            {
+                                <div class="btn-group-vertical">
+                                    @*<span>@dist.Label <a href="@dist.AccessUrl"></a></span>*@
+                                    @*@Html.ActionLink(dist.Label, "Distribution", "DemoWithTable", new {graphId = Model.Id, distId = dist.Uri}, null)*@
+                                    <a class="btn btn-primary" href="@dist.AccessUrl" target="_blank">@dist.Name</a>
+                                    <a class="btn btn-default" href="~/DemoWithTable/Distribution?graphId=@Model.Id&distId=@dist.Uri">Details</a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+            <a onclick="history.go(-1); return false;" href="#">Back to Data Catalogue</a>
+        </p>
+        <br/>
+        <br>
+    </div>
+</main>
+
